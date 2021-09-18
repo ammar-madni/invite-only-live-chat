@@ -18,7 +18,7 @@ class CreateChatsTable extends Migration
             $table->uuid('user_id');
             $table->string('name');
             $table->timestamps();
-            
+
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')

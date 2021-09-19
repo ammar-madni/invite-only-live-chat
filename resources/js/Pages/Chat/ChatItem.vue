@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6 w-full">
     <p class="font-bold text-lg text-gray-800">{{ chat.name }}</p>
-    <Link class="text-sm text-blue-500" :href="route('chat', { id: chat.id })"
+    <Link class="text-sm text-blue-500" :href="route('chat', chat.id)"
       >Join Chat</Link
     >
   </div>

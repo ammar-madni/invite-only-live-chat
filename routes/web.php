@@ -27,5 +27,6 @@ Route::get('/', function () {
 });
 
 Route::get('/chats', [ChatController::class, 'index'])->name('chats');
+Route::post('/chats', [ChatController::class, 'store']);
 Route::get('/chats/{chat}', [ChatController::class, 'show'])->name('chat');
 Route::post('/chats/{chat}/messages', [ChatMessageController::class, 'store'])->name('messages');

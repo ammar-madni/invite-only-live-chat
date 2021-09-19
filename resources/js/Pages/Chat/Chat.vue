@@ -4,6 +4,9 @@
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         {{ chat.name }}
       </h2>
+      <!-- <div class="flex">
+        <p class="mt-2">Chat ID: <span ref="chatId" class="text-light text-gray-500">{{ chat.id }}</span></p>
+      </div> -->
     </template>
 
     <div class="py-12">
@@ -12,13 +15,12 @@
           class="
             bg-white
             h-[30rem]
-            sm:h-[40rem]
+            md:h-[40rem]
             sm:rounded-lg
             shadow-xl
             p-6
             w-full
-            flex
-            flex-col
+            flex flex-col
           "
         >
           <div
@@ -41,18 +43,37 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
-import AppLayout from "@/Layouts/AppLayout.vue";
-import MessageItem from "@/Pages/Chat/MessageItem.vue";
-import NewMessageForm from "@/Pages/Chat/NewMessageForm.vue";
+import { defineComponent } from 'vue';
+import { Inertia } from '@inertiajs/inertia';
+import AppLayout from '@/Layouts/AppLayout.vue';
+import MessageItem from '@/Pages/Chat/MessageItem.vue';
+import NewMessageForm from '@/Pages/Chat/NewMessageForm.vue';
 
 export default defineComponent({
-  props: ["chat"],
+  props: ['chat'],
 
   components: {
     AppLayout,
     MessageItem,
     NewMessageForm,
+  },
+
+  mounted() {
+    console.log(`chat.${this.chat.id}`);
+    window.Echo.join(`chat.${this.chat.id}`)
+      .here((users) => {
+        console.log(users);
+      })
+      .joining((user) => {
+        console.log(user.name + ' joined');
+      })
+      .leaving((user) => {
+        console.log(user.name + ' left');
+      })
+      .listen('NewMessage', (e) => {
+        console.log(e);
+        Inertia.reload({ only: ['chat'] });
+      });
   },
 });
 </script>

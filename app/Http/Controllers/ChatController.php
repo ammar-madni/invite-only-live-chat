@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Chat;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
 class ChatController extends Controller
 {
@@ -27,7 +26,7 @@ class ChatController extends Controller
     public function index()
     {
         // return ['hello' => 'world'];
-        return Inertia::render('Chat/Index', [
+        return inertia()->render('Chat/Index', [
             'chats' => auth()->user()->chat,
         ]);
     }
@@ -50,7 +49,15 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'chatName' => 'required|max:20',
+        ]);
+
+        $newChat = $request->user()->chat()->create([
+            'name' => $request->chatName,
+        ]);
+
+        return redirect()->route('chat', $newChat->id);
     }
 
     /**
@@ -61,8 +68,7 @@ class ChatController extends Controller
      */
     public function show(Chat $chat)
     {
-        // dd($chat);
-        return Inertia::render('Chat/Chat', [
+        return inertia()->render('Chat/Chat', [
             'chat' => $chat->load('message.user'),
         ]);
     }

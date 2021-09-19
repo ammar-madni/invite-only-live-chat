@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewMessage;
 use Illuminate\Http\Request;
 
 class ChatMessageController extends Controller
@@ -46,13 +47,17 @@ class ChatMessageController extends Controller
     public function store(Request $request, $chatId)
     {
         $this->validate($request, [
-            'body' => 'required',
+            'message' => 'required|max:255',
         ]);
 
-        $request->user()->message()->create([
-            'body' => $request->body,
+        $message = $request->user()->message()->create([
+            'body' => $request->message,
             'chat_id' => $chatId,
         ]);
+
+        broadcast(new NewMessage($message))->toOthers();
+
+        return back();
     }
 
     /**

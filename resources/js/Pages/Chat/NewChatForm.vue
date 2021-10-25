@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="w-full px-6 sm:px-0">
     <form class="py-4 w-full flex space-x-4" @submit.prevent="handleSubmit()">
       <input
         class="

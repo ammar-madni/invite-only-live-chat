@@ -24720,30 +24720,24 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "font-semibold text-xl text-gray-800 leading-tight"
-}, "Chats", -1
+}, " Chats ", -1
 /* HOISTED */
 );
 
 var _hoisted_2 = {
-  "class": "py-12"
+  "class": "max-w-7xl mx-auto sm:px-6 lg:px-8 py-12 space-y-12"
 };
 var _hoisted_3 = {
-  "class": "max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-12"
-};
-var _hoisted_4 = {
+  key: 0,
   "class": "space-y-4"
 };
-var _hoisted_5 = {
-  key: 0,
-  "class": "font-semibold text-xl text-gray-800 leading-tight"
-};
-var _hoisted_6 = {
-  "class": "space-y-4"
-};
-var _hoisted_7 = {
-  key: 0,
-  "class": "font-semibold text-xl text-gray-800 leading-tight"
-};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "font-semibold text-xl text-gray-800 leading-tight px-6 sm:px-0"
+}, " My Chats ", -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_new_chat_form = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("new-chat-form");
 
@@ -24758,7 +24752,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [_hoisted_1];
     }),
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_chat_form), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_ctx.chats.count > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h2", _hoisted_5, " My Chats ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.chats, function (chat, index) {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_chat_form), _ctx.chats.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [_hoisted_4, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.chats, function (chat, index) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           key: index
         }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_chat_item, {
@@ -24768,7 +24762,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         , ["chat"])]);
       }), 128
       /* KEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_ctx.saved_chats > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h2", _hoisted_7, " Saved Chats ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-for=\"(chat, index) in chats\" :key=\"index\">\n              <chat-item :chat=\"chat\" />\n            </div> ")])])])];
+      ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-if=\"saved_chats.length > 0\" class=\"space-y-4\">\n                <h2\n                    class=\"\n                        font-semibold\n                        text-xl text-gray-800\n                        leading-tight\n                    \"\n                >\n                    Saved Chats\n                </h2>\n                <div v-for=\"(chat, index) in chats\" :key=\"index\">\n                    <chat-item :chat=\"chat\" />  \n                </div>\n            </div> ")])];
     }),
     _: 1
     /* STABLE */
@@ -24832,7 +24826,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "w-full"
+  "class": "w-full px-6 sm:px-0"
 };
 var _hoisted_2 = ["disabled"];
 var _hoisted_3 = {

@@ -16,6 +16,7 @@
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script async defer data-website-id="c637b144-cca9-4085-b9df-eca42051e329" src="https://analytics.ammarsolutions.co.uk/umami.js"></script>
     </head>
     <body class="font-sans antialiased">
         @inertia
